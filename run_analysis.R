@@ -60,6 +60,6 @@ run_analysis <- function() {
         row.names(mean_list) <- NULL 
         
         ## Write meanlist to file
-        write.table(mean_list, "AvgOf_Mean_Std.txt")
+        write.table(mean_list, "AvgOf_Mean_Std.txt", row.names = FALSE)
 }
 
