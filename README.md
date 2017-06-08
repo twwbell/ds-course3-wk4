@@ -40,24 +40,24 @@ activityrecognition '@' smartlab.ws
 
 ## Analysis
 The R script called run_analysis.R that does the following:
-1.Merges the training and the test sets to create one data set.
-** Read all required data
-** Add activity labels with descriptions to both sets using left_join (test and training)
-** Prepare vector with column headers using activity, subject and features (variables)
-** Merge columns on both sets (test and training)
-** Bind test and training and remove activity IDs
-1.Extracts only the measurements on the mean and standard deviation for each measurement.
-** Subset columns for mean and std using grep and convert to numeric
+1. Merges the training and the test sets to create one data set.
+   1. Read all required data
+   1. Add activity labels with descriptions to both sets using left_join (test and training)
+   1. Prepare vector with column headers using activity, subject and features (variables)
+   1. Merge columns on both sets (test and training)
+   1. Bind test and training and remove activity IDs
+1. Extracts only the measurements on the mean and standard deviation for each measurement.
+   1. Subset columns for mean and std using grep and convert to numeric
 1. Uses descriptive activity names to name the activities in the data set
-** See step 1
+   1. See step 1
 1. Appropriately labels the data set with descriptive variable names
-** See step 1
+   1. See step 1
 1. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-** Split subset into list for each activity and subject combination
-** Calculate average for for each activity and each subject using colMeans
-** Unsplit mean_set, extract activity and improve column names
-** Put it all together and remove redundant row names
-** Write meanlist to file
+   1. Split subset into list for each activity and subject combination
+   1. Calculate average for for each activity and each subject using colMeans
+   1. Unsplit mean_set, extract activity and improve column names
+   1. Put it all together and remove redundant row names
+   1. Write meanlist to file
 
 ## Independent data set
 AvgOf_Mean_Std.txt is an independent tidy data set with the average of each variable for each activity and each subject.
@@ -65,7 +65,8 @@ AvgOf_Mean_Std.txt is an independent tidy data set with the average of each vari
 Codebook.md is a codebook describing all the variables in the new data set. This codebook was rendered using the codebook() function of the memisc package (version 0.99.8) from CRAN.
 
 # Script to easily read my data set
-address <- "https://raw.githubusercontent.com/twwbell/ds-course3-wk4/master/AvgOf_Mean_Std.txt"
+```address <- "https://raw.githubusercontent.com/twwbell/ds-course3-wk4/master/AvgOf_Mean_Std.txt"
 address <- sub("^https", "http", address)
 data <- read.table(url(address), header = TRUE) 
 View(data)
+```
