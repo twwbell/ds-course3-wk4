@@ -65,7 +65,8 @@ AvgOf_Mean_Std.txt is an independent tidy data set with the average of each vari
 Codebook.md is a codebook describing all the variables in the new data set. This codebook was rendered using the codebook() function of the memisc package (version 0.99.8) from CRAN.
 
 # Script to easily read my data set
-```address <- "https://raw.githubusercontent.com/twwbell/ds-course3-wk4/master/AvgOf_Mean_Std.txt"
+```
+address <- "https://raw.githubusercontent.com/twwbell/ds-course3-wk4/master/AvgOf_Mean_Std.txt"
 address <- sub("^https", "http", address)
 data <- read.table(url(address), header = TRUE) 
 View(data)
